@@ -12,10 +12,10 @@ public class ProductosModel {
 
     private Long id;
     private String nombre_producto;
-    private double precio_compra;
-    private double precio_venta;
+    private Double precio_compra;
+    private Double precio_venta;
     private String descripcion;
-    private int stock;
+    private Integer stock;
 
     @ManyToOne
     @JoinColumn(name = "presentacion_id")
@@ -25,8 +25,8 @@ public class ProductosModel {
         
     }
 
-    public ProductosModel(String nombre_producto, double precio_compra, double precio_venta, String descripcion,
-            int stock, PresentacionModel presentacionModel) {
+    public ProductosModel(String nombre_producto, Double precio_compra, Double precio_venta, String descripcion,
+            Integer stock, PresentacionModel presentacionModel) {
         this.nombre_producto = nombre_producto;
         this.precio_compra = precio_compra;
         this.precio_venta = precio_venta;
@@ -51,19 +51,19 @@ public class ProductosModel {
         this.nombre_producto = nombre_producto;
     }
 
-    public double getPrecio_compra() {
+    public Double getPrecio_compra() {
         return precio_compra;
     }
 
-    public void setPrecio_compra(double precio_compra) {
+    public void setPrecio_compra(Double precio_compra) {
         this.precio_compra = precio_compra;
     }
 
-    public double getPrecio_venta() {
+    public Double getPrecio_venta() {
         return precio_venta;
     }
 
-    public void setPrecio_venta(double precio_venta) {
+    public void setPrecio_venta(Double precio_venta) {
         this.precio_venta = precio_venta;
     }
 
@@ -75,11 +75,11 @@ public class ProductosModel {
         this.descripcion = descripcion;
     }
 
-    public int getStock() {
+    public Integer getStock() {
         return stock;
     }
 
-    public void setStock(int stock) {
+    public void setStock(Integer stock) {
         this.stock = stock;
     }
 
