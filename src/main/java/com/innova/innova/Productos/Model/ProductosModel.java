@@ -8,31 +8,21 @@ public class ProductosModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "producto_id")
+    @Column(name = "productos_id")
 
     private Long id;
     private String nombre_producto;
-    private Double precio_compra;
+    private Double precio_costo;
     private Double precio_venta;
-    private String descripcion;
-    private Integer stock;
+    private Integer existencia;
 
-    @ManyToOne
-    @JoinColumn(name = "presentacion_id")
-    private PresentacionModel presentacionmodelo;
-
-    public ProductosModel(){
-        
-    }
-
-    public ProductosModel(String nombre_producto, Double precio_compra, Double precio_venta, String descripcion,
-            Integer stock, PresentacionModel presentacionModel) {
+    public ProductosModel(String nombre_producto, Double precio_costo, Double precio_venta, Integer existencia,
+            EstadoModel estadomodelo) {
         this.nombre_producto = nombre_producto;
-        this.precio_compra = precio_compra;
+        this.precio_costo = precio_costo;
         this.precio_venta = precio_venta;
-        this.descripcion = descripcion;
-        this.stock = stock;
-        this.presentacionmodelo = presentacionModel;
+        this.existencia = existencia;
+        
     }
 
     public Long getId() {
@@ -51,12 +41,12 @@ public class ProductosModel {
         this.nombre_producto = nombre_producto;
     }
 
-    public Double getPrecio_compra() {
-        return precio_compra;
+    public Double getPrecio_costo() {
+        return precio_costo;
     }
 
-    public void setPrecio_compra(Double precio_compra) {
-        this.precio_compra = precio_compra;
+    public void setPrecio_costo(Double precio_costo) {
+        this.precio_costo = precio_costo;
     }
 
     public Double getPrecio_venta() {
@@ -67,28 +57,16 @@ public class ProductosModel {
         this.precio_venta = precio_venta;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Integer getExistencia() {
+        return existencia;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setExistencia(Integer existencia) {
+        this.existencia = existencia;
     }
+    
 
-    public Integer getStock() {
-        return stock;
-    }
+    
 
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public PresentacionModel getPresentacionModelo() {
-        return presentacionmodelo;
-    }
-
-    public void setPresentacionModelo(PresentacionModel presentacionModelo) {
-        this.presentacionmodelo = presentacionModelo;
-    }
 
 }

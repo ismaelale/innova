@@ -7,16 +7,16 @@ import com.innova.innova.Productos.Repository.ProductosRepo;
 
 @Service
 public class ProductosService {
- 
-    private final ProductosRepo productosrepo;
+    
+    private final ProductosRepo productosRepo;
 
-    public ProductosService(ProductosRepo productosRepo){
-        this.productosrepo = productosRepo;
+    public ProductosService(ProductosRepo productosrepo){
+        this.productosRepo = productosrepo;
     }
 
-    public String guardarProducto(ProductosModel productosModel){
-        productosrepo.save(productosModel);
+    public String AgregarProductos(ProductosModel addproductosmodel){
+        productosRepo.save(addproductosmodel);
         return "Producto Agregado";
     }
-    
+
 }
