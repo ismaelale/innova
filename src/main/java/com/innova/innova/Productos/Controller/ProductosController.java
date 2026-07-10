@@ -7,12 +7,12 @@ import com.innova.innova.Productos.Service.ProductosService;
 
 @RestController
 @RequestMapping("/app/AddGeneral")
-public class AddController {
+public class ProductosController {
     
 
     private final ProductosService productosService;
 
-    public AddController(ProductosService productosservice){
+    public ProductosController(ProductosService productosservice){
         this.productosService = productosservice;
     }
 
