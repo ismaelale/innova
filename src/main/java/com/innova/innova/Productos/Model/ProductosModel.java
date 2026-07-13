@@ -16,6 +16,10 @@ public class ProductosModel {
     private Double precio_venta;
     private Integer existencia;
 
+    public ProductosModel(){
+        
+    }
+
     public ProductosModel(String nombre_producto, Double precio_costo, Double precio_venta, Integer existencia,
             EstadoModel estadomodelo) {
         this.nombre_producto = nombre_producto;

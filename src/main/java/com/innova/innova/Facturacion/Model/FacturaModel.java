@@ -1,6 +1,6 @@
 package com.innova.innova.Facturacion.Model;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 import com.innova.innova.Clientes.Model.ClienteModel;
 
@@ -21,13 +21,13 @@ public class FacturaModel {
     private ClienteModel clienteModel;
 
     private String comentario;
-    private Date fecha_venta;
+    private LocalDate fecha_venta;
 
     public FacturaModel(){
 
     }
 
-    public FacturaModel(ClienteModel clienteModel, String comentario, Date fecha_venta) {
+    public FacturaModel(ClienteModel clienteModel, String comentario, LocalDate fecha_venta) {
         this.clienteModel = clienteModel;
         this.comentario = comentario;
         this.fecha_venta = fecha_venta;
@@ -57,11 +57,11 @@ public class FacturaModel {
         this.comentario = comentario;
     }
 
-    public Date getFecha_venta() {
+    public LocalDate getFecha_venta() {
         return fecha_venta;
     }
 
-    public void setFecha_venta(Date fecha_venta) {
+    public void setFecha_venta(LocalDate fecha_venta) {
         this.fecha_venta = fecha_venta;
     }
 
