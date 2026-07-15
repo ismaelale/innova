@@ -2,7 +2,7 @@ package com.innova.innova.Compras.Model;
 
 import java.sql.Date;
 
-import com.innova.innova.Productos.Model.ProveedorModel;
+import com.innova.innova.Proveedores.Model.ProveedorModel;
 
 import jakarta.persistence.*;
 

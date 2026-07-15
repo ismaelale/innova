@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+</head>
+<body>
+    <h1>Compras</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha de Compra</th>
+                <th>Nombre Producto</th>
+                <th>Nombre Proveedor</th>
+                <th>Precio de Compra</th>
+                <th>Precio de Venta</th>
+                <th>Cantidad de Compra</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="c : ${listaCompra}">
+                <td th:text="${c.fecha_actual}"></td>
+                <td th:text="${c.nombre_producto}"></td>
+                <td th:text="${c.Nombre_Proveedor}"></td>
+                <td th:text="${c.precio_compra}"></td>
+                <td th:text="${c.precio_venta}"></td>
+                <td th:text="${c.Cantidad_De_Compra}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

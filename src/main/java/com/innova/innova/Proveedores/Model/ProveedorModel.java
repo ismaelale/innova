@@ -1,4 +1,4 @@
-package com.innova.innova.Productos.Model;
+package com.innova.innova.Proveedores.Model;
 
 import jakarta.persistence.*;
 

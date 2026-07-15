@@ -1,11 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innova</title>
 </head>
 <body>
+
+    <style>
+        body{
+            background-color: rgb(12, 22, 75);
+            color: white;
+            padding: 0;
+            margin :  0;
+            font-size: 20px;
+        }
+        h1, h2{
+            color: rgb(114, 114, 192);
+        }
+        .encabezado{
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .navegador{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px; 
+        }
+        .navegador a{
+            text-decoration: none;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .navegador a:hover{
+            color: rgb(152, 151, 228);
+
+        }
+
+    </style>
     
+    <header class="encabezado">
+        <div class="titulo">
+            <h1>INNOVA</h1>
+        </div>
+        <h2>Reportes</h2>
+        <nav class="navegador">
+            <a th:href="@{/app/AddGeneral/ver}">Información de Productos</a>
+            <a th:href="@{/app/Compras/resumen}">Información de Compras</a> 
+            <a th:href="@{/app/Proveedores/listProveedores}">Información de Proveedores</a>
+            <a th:href="@{/app/Facturacion/VistaFacturas}">Información de Facturas</a>
+            <h2>Ingresar</h2>
+            <a th:href="@{//}">Factura</a>
+            <a th:href="@{//}">Usuarios</a>
+            <a th:href="@{//}">Clientes</a>
+            <a th:href="@{//}">Productos</a>
+        </nav>
+    </header>   
+
+    
+
+
 </body>
 </html>

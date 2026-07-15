@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fcaturas</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: rgb(12, 22, 75);
+            color: white;
+            padding: 0;
+            margin :  0;
+            font-size: 20px;
+            
+        }
+        h1, h2{
+            color: rgb(114, 114, 192);
+        }
+        .encabezado{
+            display: flex;
+            justify-content: center;
+        }
+        .listas{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+        }
+        td, th{
+            text-align: center;
+            width: 15rem;
+        }
+        button{
+            color: white;
+            font-size: 16px;
+            background-color: rgb(59, 65, 97);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 10rem;
+            height: 30px;
+            transition: 0.2s;
+        }
+        button:hover{
+            background-color: rgb(30, 41, 97);
+
+        }
+    </style>
+
+    <header class="encabezado">
+        <h1>INNOVA</h1>
+    </header>
+    
+    <main class="listas">
+        <table border="1">
+            <thead>
+                <th>Nombre del Producto</th>
+                <th>Persona Responsable</th>
+                <th>Precio</th>
+                <th>Impuesto</th>
+                <th>Total</th>
+            </thead>
+            <tbody>
+                <tr th:each="rf : ${VistaFacturas}">
+                    <td th:text="${rf.Nombre_Productos}"></td>
+                    <td th:text="${rf.Nombre_Usuario}"></td>
+                    <td th:text="${rf.Precio}"></td>
+                    <td th:text="${rf.Impuesto}"></td>
+                    <td th:text="${rf.Total}"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button onclick="history.back()">Atras</button>
+    </main>
+</body>
+</html>

@@ -1,13 +1,18 @@
 package com.innova.innova.Compras.Controller;
 
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import com.innova.innova.Compras.Model.ComprasDetalleModel;
 import com.innova.innova.Compras.Model.ComprasModel;
+import com.innova.innova.Compras.Model.VistaComprasDetalladaModel;
 import com.innova.innova.Compras.Service.ComprasDetalleService;
 import com.innova.innova.Compras.Service.ComprasService;
 
-@RestController
+@Controller
 @RequestMapping("/app/Compras")
 public class ControllerCompras {
     
@@ -17,6 +22,13 @@ public class ControllerCompras {
     public ControllerCompras(ComprasService comprasservice, ComprasDetalleService detallecompraservice){
         this.comprasService = comprasservice;
         this.detallecompraService = detallecompraservice;
+    }
+
+    @GetMapping("/resumen")
+    public String listarCompras(Model model){
+        
+        model.addAttribute("listaCompra", detallecompraService.listaResumenCompras());
+        return "Compras";
     }
 
     @PostMapping("/addCompra")
